@@ -1,7 +1,5 @@
-<jsp:include page="include/header.jsp">
-<jsp:param value="Homepage" name="titlePage"/>
+<jsp:include page="include/header.jsp"/>
 
-</jsp:include>
 
 
 <h1>Homepage</h1>

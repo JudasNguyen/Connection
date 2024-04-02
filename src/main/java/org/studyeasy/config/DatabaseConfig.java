@@ -10,7 +10,7 @@ public class DatabaseConfig {
 		// Initialize all the information regarding
 		String dbURL= "jdbc:mysql://localhost:3306/studyeasy?useSSL=false";
 		String dbUsername ="root";
-		String dbPassword = "123456";
+		String dbPassword = "admin";
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,7 +24,7 @@ public class DatabaseConfig {
 			e.printStackTrace();
 		}
 		
-
+		System.out.println(con);
 		return con;
 		
 	}

@@ -21,14 +21,16 @@ public class UsersModel {
 		ResultSet rs = null;
 		System.out.println(connect);
 		//Step 2: Create the DB query
-		String query ="SELECT * FROM users";
+		String query ="SELECT * FROM studyeasy.users";
 		try {
 			stmt = connect.createStatement();
 			
+
 			// Step 3: Execution of statement
 			rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
+				System.out.println(connect);
 				listusers.add(new User(rs.getInt("user_id"), rs.getString("username"), rs.getString("email")));
 			}
 		} catch (SQLException e) {

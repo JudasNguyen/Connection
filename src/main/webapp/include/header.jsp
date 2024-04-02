@@ -49,8 +49,6 @@ if (request.getAttribute("title") == null) {
 					<li><a
 						href="<%=request.getContextPath()%>/home?page=listusers">LIST
 							USERS</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">PAGES <b class="caret"></b></a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

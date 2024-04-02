@@ -1,29 +1,38 @@
-<jsp:include page="include/header.jsp" />
-
-
+<jsp:include page="include/header.jsp"/>
 <%@page import="java.util.List"%>
 <%@page import="org.studyeasy.entity.User"%>
 
 
-
-<h1>List users</h1>
+<h3>List users</h3>
 <table border="1">
-	<thead>
-		<th>User Id</th>
-		<th>User name</th>
-		<th>Email</th>
-	</thead>
+<thead>
+	<tr>
+	 <th>User Id</th>
+	 <th>Username</th>
+	 <th>Email</th>
+	</tr>
+</thead>
 
-	<%
-	List<User> listusers = (List) request.getAttribute("listusers");
-	for (User _user : listusers) {
-		out.print("<tr>");
-		out.print("<td>" + _user.getUser_id() + "</td>");
-		out.print("<td>" + _user.getUsername() + "</td>");
-		out.print("<td>" + _user.getEmail() + "</td>");
-		out.print("<tr>");
-	}
-	%>
+<tbody>
+	<% 
+Object attribute = request.getAttribute("listusers");
+if (attribute instanceof List) {
+    List<User> listusers = (List<User>) attribute;
+    for (User _user : listusers) {
+        out.print("<tr>");
+        out.print("<td>" + _user.getUser_id() + "</td>");
+        out.print("<td>" + _user.getUsername() + "</td>");
+        out.print("<td>" + _user.getEmail() + "</td>");
+        // Other user attributes...
+        out.print("</tr>");
+    }
+} else {
+    out.print("<tr><td colspan=\"3\">No users found</td></tr>");
+}
+%>
+</tbody>
 </table>
 
-<jsp:include page="include/footer.jsp"></jsp:include>
+
+
+<jsp:include page="include/footer.jsp"/>
